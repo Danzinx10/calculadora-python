@@ -3,17 +3,28 @@
 
 while True:
     print('Olá mundo! Me diga dois números e eu te direi o calculo deles!')
-    num1 = int(input('Digite o primeiro número: '))
-    num2 = int(input('Digite o segundo número: '))
+    try:
+        num1 = float(input('Digite o primeiro número: '))
+    except ValueError:
+        print('Valor inválido! Por favor, digite um número.')
+        continue
+    try:
+        num2 = float(input('Digite o segundo número: '))
+    except ValueError:
+        print('Valor inválido! Por favor, digite um número.')
+        continue
 
 # Exibe as opções de operações
-
-    print('Agora me diga qual operação você quer fazer:')
-    print('1 - Adição')
-    print('2 - Subtração')
-    print('3 - Multiplicação')
-    print('4 - Divisão')
-    op = int(input('Digite o número da operação: '))
+    try:
+        print('Agora me diga qual operação você quer fazer:')
+        print('1 - Adição')
+        print('2 - Subtração')
+        print('3 - Multiplicação')
+        print('4 - Divisão')
+        op = int(input('Digite o número da operação: '))
+    except ValueError:
+        print('Valor inválido! Por favor, digite um número.')
+        continue    
 # Realiza a operação escolhida
 
     if op == 1:
@@ -32,8 +43,15 @@ while True:
     print('Obrigado por usar o meu programa!')
     print('Até logo!')
 
+
     continuar = input('Você quer fazer outra operação? (s/n): ')
     if continuar.lower() != 's':
+        print('Saindo do programa...')
+        import time
+        time.sleep(2)
+        print('Até logo!')
+        import sys
+        sys.exit()
         break
 
 # Fim do código
