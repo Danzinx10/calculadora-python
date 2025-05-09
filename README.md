@@ -1,30 +1,57 @@
-# Calculadora
+# Autor: Daniel de Macêdo
+# Data de criação: 2025-05-09
 
-## O que ele faz:
-A Calculadora em Python é um projeto simples feito para ajudar a resolver operações matemáticas básicas com facilidade e rapidez.  
-Ela possui uma interface textual limpa, com opções claras, e suporta as quatro operações aritméticas principais: adição, subtração, multiplicação e divisão.
+while True:
+    print('Olá mundo! Me diga dois números e eu te direi o calculo deles!')
+    try:
+        num1 = float(input('Digite o primeiro número: '))
+    except ValueError:
+        print('Valor inválido! Por favor, digite um número.')
+        continue
+    try:
+        num2 = float(input('Digite o segundo número: '))
+    except ValueError:
+        print('Valor inválido! Por favor, digite um número.')
+        continue
 
-## Como usar
-1. Execute o código com Python 3.11 ou superior.  
-2. Digite os dois números que deseja usar.  
-3. Escolha a operação desejada digitando o número correspondente no menu.  
-4. Veja o resultado da conta diretamente no terminal.
+# Exibe as opções de operações
+    try:
+        print('Agora me diga qual operação você quer fazer:')
+        print('1 - Adição')
+        print('2 - Subtração')
+        print('3 - Multiplicação')
+        print('4 - Divisão')
+        op = int(input('Digite o número da operação: '))
+    except ValueError:
+        print('Valor inválido! Por favor, digite um número.')
+        continue    
+# Realiza a operação escolhida
 
-**Exemplo de uso:**  
-Digite o primeiro número: 2
-Digite o segundo número: 7
-Escolha a operação: 1 (adição)
-Resultado: 2 + 7 = 9
+    if op == 1:
+        print(f'A soma de {num1} + {num2} é igual a {num1 + num2}')
+    elif op == 2:
+        print(f'A subtração de {num1} - {num2} é igual a {num1 - num2}')
+    elif op == 3:
+        print(f'A multiplicação de {num1} * {num2} é igual a {num1 * num2}')
+    elif op == 4:
+        if num2 == 0:
+            print('Não é possível dividir por zero!')
+        else:
+            print(f'A divisão de {num1} / {num2} é igual a {num1 / num2}')
+    else:
+        print('Operação inválida! Tente novamente.')
+    print('Obrigado por usar o meu programa!')
+    print('Até logo!')
 
-## Tecnologias usadas
-- Python 3.11
 
-## Futuras melhorias
-- [ ] Repetir a operação até o usuário decidir sair  
-- [ ] Adicionar opção de exponenciação e porcentagem  
-- [ ] Interface gráfica com Tkinter (botões e janelas)  
-- [ ] Suporte a números decimais (`float`)  
-- [ ] Transformar em uma API com Flask
+    continuar = input('Você quer fazer outra operação? (s/n): ')
+    if continuar.lower() != 's':
+        print('Saindo do programa...')
+        import time
+        time.sleep(2)
+        print('Até logo!')
+        import sys
+        sys.exit()
+        break
 
-## Histórico
-- `feat: primeira versão da calculadora com operações básicas`
+# Fim do código
