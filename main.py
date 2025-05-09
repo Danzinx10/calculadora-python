@@ -1,6 +1,11 @@
+# Autor: Daniel de Macêdo
+# Data de criação: 2025-05-09
+
 print('Olá mundo! Me diga dois números e eu te direi o calculo deles!')
 num1 = int(input('Digite o primeiro número: '))
 num2 = int(input('Digite o segundo número: '))
+
+# Exibe as opções de operações
 
 print('Agora me diga qual operação você quer fazer:')
 print('1 - Adição')
@@ -8,6 +13,8 @@ print('2 - Subtração')
 print('3 - Multiplicação')
 print('4 - Divisão')
 op = int(input('Digite o número da operação: '))
+
+# Realiza a operação escolhida
 
 if op == 1:
     print(f'A soma de {num1} + {num2} é igual a {num1 + num2}')
